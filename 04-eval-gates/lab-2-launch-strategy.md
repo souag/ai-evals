@@ -1,23 +1,27 @@
 # Module 4 · Launch Strategy · Section 4.0 Release Criteria
 
-> Repo file `ai-evals/04-eval-gates/lab-2-launch-strategy.md`. Your PRD's release-criteria section: the numeric thresholds, the CI gate policy, and the mitigation lever for the Soft gate.
->
-> Fill this with the **Launch Strategy Builder** tool, then **Copy markdown** and paste it over this file. The headings below mirror the tool's output exactly.
+_Generated from the M4 Launch Strategy Builder. Drop this into your PRD as Section 4.0._
 
 ## 4.0 Release Criteria
 
+The following thresholds must be met by Model Candidate v1.x before approval for production deploy. Eval Specs from Module 3 define the measurement methodology.
+
 | Severity | Metric | Threshold | Dataset | Method |
 |---|---|---|---|---|
-| Hard | _…_ | _e.g. = 0%_ | `Ascend_IQ_Logs` | _…_ |
-| Soft | _…_ | _e.g. < 2%_ | `Ascend_IQ_Logs` | _[Example Spec]_ |
-| Advisory | _…_ | _e.g. tone ≥ 4/5_ | `Ascend_IQ_Logs` | _[Example Spec]_ |
+| 🔴 Hard (Blocker) | Hallucination Stale Pricing | 0% | `Ascend_IQ_Logs` | _· link Eval Spec ·_ |
+| 🟡 Soft (Review) | Latency | < 3s | `Ascend_IQ_Logs` | _[Example Spec]_ |
+| 🔵 Advisory (Monitor) | Tone Consistency | ≥ 4/5 | `Ascend_IQ_Logs` | _[Example Spec]_ |
 
 ## 4.1 CI Gate Policy
 
-> _Which per-dimension regression blocks the merge vs warns, referencing a regression golden set ≥ 30. Policy is per-dimension — never one blended "quality" number. Use deterministic fixtures/replay, not live model calls._
+These thresholds run in a GitHub Actions gate on every pull request, replaying deterministic fixtures from the regression golden set (≥ 30 cases). PM owns the policy; Engineering owns the YAML.
+
+> _· state the per-dimension block vs. warn policy in the builder ·_
 
 ## 4.2 Mitigation Plan · Soft Gate
 
-**Selected Lever:** _Staged Rollout / Feature Flagging / Beta Labeling / Delay Launch_
+_· pick a mitigation lever + complete the sentence in the builder ·_
 
-> _One sentence: how this lever contains the Soft-gate risk while you ship._
+---
+
+_Lab artifact for Module 4, AI Evals Certification, Product School. Becomes the Eval Gates slide of the Final Project deck._
